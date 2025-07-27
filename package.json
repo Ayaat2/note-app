@@ -2,15 +2,19 @@
   "name": "note-app",
   "version": "1.0.0",
   "main": "main.js",
+  "homepage": "https://Ayaat2.github.io/note-app",
   "scripts": {
     "start": "vite",
-    "build": "vite buid"
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^7.0.5"
   }
 }
