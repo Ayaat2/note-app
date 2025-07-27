@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./images/icon.png" />
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;700&family=Edu+SA+Hand:wght@400..700&family=Fustat:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:wght@300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
+      rel="stylesheet" />
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./src/note-app.css" />
+  </head>
+  <body>
+    <!-- Just moblie  -->
+    <header class="header-mobile bg-color" role="banner">
+      <button class="menu-toggle-mobile" aria-label="Open menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="short-bar"></div>
+      </button>
+      <h1 class="logo-mobile">Almdrasa-Notes</h1>
+      <button
+        class="search-toggle-mobile"
+        aria-label="Search"
+        aria-expanded="false">
+        <img src="./public/images/search2.png" alt="search icon" />
+      </button>
+    </header>
+    <div
+      class="search-bar-mobile hidden"
+      role="search"
+      aria-label="Search Field">
+      <img
+        src="./public/images/Search.png"
+        alt="search icon"
+        class="search-image" />
+      <input type="text" class="input-search-mobile" placeholder="Search" />
+    </div>
+    <div class="app-container">
+      <aside class="sidebar sidebar-mobile" role="complementary">
+        <h1 class="logo">Almdrasa-Notes</h1>
+        <div class="search">
+          <img src="./public/images/Search.png" alt="search icon" />
+          <input type="text" class="input-search" placeholder="Search" />
+        </div>
+        <button class="close-sidebar-mobile" aria-label="Close Menu">
+          &times;
+        </button>
+        <nav class="navigation">
+          <a href="#" class="show-notes" tabindex="0">Notes</a>
+          <a href="#" class="add-notes" id="showAddNoteBtn" tabindex="0"
+            >Add Notes</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main-content" role="main">
+        <section id="addNoteSection" class="hidden">
+          <h2 class="sectionTitle">Add Note</h2>
+          <form class="addNoteForm">
+            <label for="title">Title*</label>
+            <input type="text" id="title" class="input" required />
+            <label for="author">Author*</label>
+            <input type="text" id="author" class="input" required />
+            <label for="yourNote">Your Note*</label>
+            <textarea name="note" id="yourNote" required></textarea>
+            <div class="buttons">
+              <button type="submit" id="addNoteBtn" class="button">
+                Add Note
+              </button>
+              <button type="button" id="addPinnedBtn" class="button">
+                Add pinned note
+              </button>
+            </div>
+          </form>
+        </section>
+        <div class="note-content-wrapper">
+          <section class="notes-lists hidden">
+            <div id="addPinnedBtn" class="pinned">
+              <h2 class="titles-pinned">pinned</h2>
+            </div>
+            <div id="addNoteBtn" class="notes">
+              <h2 class="notes-titles">Notes</h2>
+            </div>
+            <div
+              class="resizer"
+              role="separator"
+              aria-orientation="vertical"
+              tabindex="0"
+              aria-label="Resize sidebar"></div>
+          </section>
+          <section class="note-body hidden" id="noteBody"></section>
+          <button id="addNoteFloatingBtn" aria-label="Add note">
+            <img src="./public/images/add.png" alt="add note" />
+          </button>
+        </div>
+      </main>
+    </div>
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
